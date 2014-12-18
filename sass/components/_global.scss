@@ -143,15 +143,11 @@ i {
 
 .image-off {
   opacity: 0;
-
- 
-    -webkit-filter: grayscale(100%) brightness(150%);
-    filter: grayscale(100%) brightness(150%);
-    filter: url(#greyscale);
-    filter: gray;
-
+  -webkit-filter: grayscale(100%) brightness(150%);
+  filter: grayscale(100%) brightness(150%);
+  filter: url(#greyscale);
+  filter: gray;
 }
-
 
 
 
