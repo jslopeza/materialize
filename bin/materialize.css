@@ -2658,6 +2658,14 @@ i.right {
   margin-left: 15px;
 }
 
+.image-off {
+  opacity: 0;
+  -webkit-filter: grayscale(100%) brightness(150%);
+  filter: grayscale(100%) brightness(150%);
+  filter: url(#greyscale);
+  filter: gray;
+}
+
 .parallax-container {
   position: relative;
   overflow: hidden;
