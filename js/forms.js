@@ -216,6 +216,15 @@
       };
     })();
 
+    // Switch Hammer event delegation
+    $('body').hammer({domEvents:true}).on("pan", "span.lever", function(e){
+      console.log(e);
+      var $this = e.target;
+      console.log($this);
+
+    });
+
+
   });
 
 }( jQuery ));
