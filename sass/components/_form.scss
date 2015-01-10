@@ -347,11 +347,11 @@ form p {
 }
 
 // Lever checked colors
-input[type=checkbox]:first-child:checked + .lever.checked {
+input[type=checkbox]:first-child:checked + .lever {
     background-color: #7bc5be;
 }
 // Tack checked colors
-input[type=checkbox]:first-child:checked + .switch.checked {
+input[type=checkbox]:first-child:checked + .lever .switch {
     background-color: #009587;
 }
 
@@ -387,14 +387,15 @@ input[type=checkbox][disabled]:checked:first-child + .lever .switch {
     background-color: #BDBDBD;
 }
 
-input[type=checkbox]:first-child:checked ~ .lever:active:after {
-       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 149, 135, 0.1);
-}
-input[type=checkbox]:first-child ~ .lever:active:after,
-input[type=checkbox][disabled]:first-child ~ .lever:active:after {
-       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
-}
-.switch label input[type=checkbox]:first-child:checked + .lever:after {
+//Shadow Styles
+//input[type=checkbox]:first-child:checked ~ .lever:active:after {
+//       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 149, 135, 0.1);
+//}
+//input[type=checkbox]:first-child ~ .lever:active:after,
+//input[type=checkbox][disabled]:first-child ~ .lever:active:after {
+//       box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+//}
+input[type=checkbox]:first-child:checked + .lever .switch {
     left: 30px;
 }
 
