@@ -340,7 +340,7 @@ form p {
 }
 
 // Hiding checkbox
-.switch label input[type=checkbox]:first-child {
+.switch input[type=checkbox]:first-child {
     opacity: 0;
     width: 0;
     height: 0;
@@ -379,7 +379,7 @@ input[type=checkbox][disabled]:first-child + .lever {
     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
     left: -5px;
     top: -2px;
-    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+//    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
 }
 // Disabled style
 input[type=checkbox][disabled]:first-child + .lever .switch ,

@@ -6241,7 +6241,7 @@ form p:last-child {
 .switch label {
   cursor: pointer; }
 
-.switch label input[type=checkbox]:first-child {
+.switch input[type=checkbox]:first-child {
   opacity: 0;
   width: 0;
   height: 0; }
@@ -6272,8 +6272,7 @@ input[type=checkbox]:first-child:checked + .lever .switch {
   position: relative;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
   left: -5px;
-  top: -2px;
-  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease; }
+  top: -2px; }
 
 input[type=checkbox][disabled]:first-child + .lever .switch, input[type=checkbox][disabled]:checked:first-child + .lever .switch {
   background-color: #BDBDBD; }

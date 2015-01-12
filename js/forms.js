@@ -56,11 +56,9 @@
     var hiddendiv = $('.hiddendiv');
     var text_area_selector = '.materialize-textarea';
       $('body').on('keyup keydown',text_area_selector , function () {
-        // console.log($(this).val());
         content = $(this).val();
         content = content.replace(/\n/g, '<br>');
         hiddenDiv.html(content + '<br>');
-        // console.log(hiddenDiv.html());
         $(this).css('height', hiddenDiv.height());
       });
 
@@ -217,12 +215,52 @@
     })();
 
     // Switch Hammer event delegation
-    $('body').hammer({domEvents:true}).on("pan", "span.lever", function(e){
-      console.log(e);
-      var $this = e.target;
-      console.log($this);
+//    $('body').hammer({domEvents:true, direction: Hammer.DIRECTION_HORIZONTAL, prevent_default:true}).on("pan", "label .lever", function(e){
+//      console.log(e);
+//
+//      var this = e.target;
+//
+//      var $switch = $(this).children('.switch');
+//      var deltaX = e.originalEvent.gesture.deltaX;
+//      $switch.velocity({ left: deltaX }, {duration: 50, queue: false, easing: 'easeOutQuad'})
 
-    });
+//    });
+
+      $('.switch').each(function(){
+        $(this).hammer().bind('pan', function(e) {
+          var $switch = $(this);
+//          console.log(e);
+          var deltaX = e.gesture.deltaX;
+          // Temporarily remove css animation to prevent lagginess
+          $switch.css({ transition: 'none' });
+          var direction = (deltaX >= 0) ? '+' : '-';
+          var currentXPos = $switch.css('left');
+
+//          Dragging animation
+          if(Math.abs(deltaX) < 36) {
+            if (deltaX > 0)) // If dragging right
+            $switch.css({ left: deltaX });
+            else { // If dragging left
+              $switch.css({ left: 30+deltaX });
+            }
+          }
+        }).bind('panend', function(e) {
+          var switchWidth = 35;
+          var $switch = $(this);
+          var deltaX = e.gesture.deltaX;
+          var percentMoved = deltaX/switchWidth;
+
+          console.log(percentMoved);
+          if (percentMoved < .35) {
+            $switch.velocity({ left: -5 }, {duration: 100, queue: false, ease: 'easeOutQuad'});
+            $switch[0].checked = true;
+          }
+          else {
+            $switch.velocity({ left: 30 }, {duration: 100, queue: false, ease: 'easeOutQuad'});
+            $switch.prop("checked", true)
+          }
+        });
+      });
 
 
   });
